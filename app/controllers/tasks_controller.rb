@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show,:update]
   before_action :correct_user, only: [:show,:update,:destroy,:edit]
   def index
-      @task = current_user.tasks.build
+      
       @tasks = current_user.tasks.order(id: :desc)
   end
 
